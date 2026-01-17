@@ -1,8 +1,24 @@
+/* Add this to your globals.css or any global CSS file */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
+  --background: #f3f4f6;
   --foreground: #171717;
+  --site-secondary-color: #000000;
+  --site-color: #34265c;
+  --header-height-mobile: 35px;
+  --header-height-desktop: 50px;
+  --main-site-color: #0000EE;
+  --footer-bg-color: #ebe5d4;
+  --primary-color: #34265c;
 }
 
 @theme inline {
@@ -12,15 +28,186 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: 'Arimo', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Montserrat', 'Arial', sans-serif;
+}
+
+.headerBtn {
+  border-radius: 50px;
+  background-color: var(--site-color);
+  color: white;
+  padding: 10px 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.main-color {
+  color: var(--main-site-color);
+}
+
+.headerBtn:hover {
+  background: linear-gradient(135deg, #003f96, #1d4ed8);
+  color: white;
+}
+
+.pageOffset {
+  padding-top: calc(var(--header-height-mobile));
+}
+
+.page-offset {
+  padding-top: calc(var(--topbar-height-mobile));
+}
+
+@media (min-width: 768px) {
+  .page-offset {
+    padding-top: calc(var(--topbar-height-desktop));
+  }
+
+  .pageOffset {
+    padding-top: calc(var(--header-height-desktop));
+  }
+}
+
+.page-offset.scrolled {
+  padding-top: var(--header-height);
+}
+
+.global-color {
+  color: var(--site-color);
+}
+
+.global-bg {
+  background-color: var(--site-color);
+}
+
+.global-bg:hover {
+  background: linear-gradient(135deg, #003f96, #1d4ed8);
+}
+
+.BookingHero_cityTickerItem {
+  display: inline-block;
+  padding: 0;
+  font-size: 1rem;
+  background: linear-gradient(36deg, rgb(26, 42, 108) 8.48%, rgb(178, 31, 31) 55.8%, rgb(253, 187, 45) 98.44%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  font-weight: 400;
+}
+
+.header_bookNowButton {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #34265c;
+  padding: 0.725rem 1rem;
+  border-radius: 24px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header_bookNowButton:hover {
+  background-color: #2a1f4a;
+  transform: translateY(-1px);
+}
+
+.scroll-offset {
+  scroll-margin-top: 100px;
+}
+
+.global-border {
+  border-color: var(--site-color);
+}
+
+.global-secondary-color {
+  color: var(--site-secondary-color);
+}
+
+.HowItWorks_container {
+  display: flex;
+  flex-direction: column;
+  background-color: #edecea;
+  padding: 2rem 1.5rem;
+}
+
+.themeDark {
+  background-color: var(--site-color);
+}
+
+.FAQSection_viewAllButton {
+  display: flex;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 12px;
+  background: #34265C;
+  cursor: pointer;
+  align-self: center;
+
+}
+
+.FAQSection_viewAllText {
+  color: #FFF;
+  text-align: center;
+  font-family: DM Sans, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+@media (max-width: 768px) {
+  .header_bookNowButton {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+}
+
+@keyframes zoomSlow {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.animate-zoomSlow {
+  animation: zoomSlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+@keyframes infinite-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.infinite-slider {
+  animation: infinite-slide 25s linear infinite;
 }

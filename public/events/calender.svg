@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="216" height="178" viewBox="0 0 216 178">
+  <!-- outer rounded shape (black) -->
+  <rect x="8" y="8" width="200" height="162" rx="20" ry="20" fill="#000"/>
+
+  <!-- two rounded tabs on top -->
+  <rect x="56" y="0" width="16" height="20" rx="8" ry="8" fill="#000"/>
+  <rect x="144" y="0" width="16" height="20" rx="8" ry="8" fill="#000"/>
+
+  <!-- inner white panel with thinner border -->
+  <rect x="18" y="38" width="180" height="122" rx="12" ry="12" fill="#fff"/>
+  <rect x="18" y="38" width="180" height="122" rx="12" ry="12"
+        fill="none" stroke="#000" stroke-width="4" vector-effect="non-scaling-stroke"/>
+
+  <!-- centered 19 -->
+  <text x="108" y="100" text-anchor="middle"
+        font-family="Helvetica, Arial, sans-serif"
+        font-size="78" font-weight="500" fill="#111" dominant-baseline="middle">
+    19
+  </text>
+</svg>
